@@ -1,6 +1,9 @@
 # COP5536 Data Structures
 Implementation of data structures explored in COP5536.
 
+# Directories
+ * `bloomfilter` - Implementation of a Bloom filter.
+
 # License
 ```
     Copyright (C) 2026  Yuliang Huang <https://github.com/yhuang3-uf>
