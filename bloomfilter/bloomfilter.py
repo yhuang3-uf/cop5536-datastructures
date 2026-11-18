@@ -109,7 +109,7 @@ class BloomFilter:
         """
         Empties the bloom filter
         """
-        self.filter_bits = bytearray(b"\x00" * (self.m // 4 + int(bool(self.m % 4)) ))
+        self.filter_bits = bytearray(b"\x00" * (self.m // 8 + int(bool(self.m % 8)) ))
 
     def get(self, o: typing.Any) -> bool:
         """
@@ -146,7 +146,7 @@ class BloomFilter:
         """
         :param index: The indices of the bits to get
         """
-        return bool(self.filter_bits[index // 4] & (1 << (3 - index%4)))
+        return bool(self.filter_bits[index // 8] & (1 << (7 - index%8)))
 
     def insert(self, o: typing.Any) -> None:
         """
@@ -166,7 +166,7 @@ class BloomFilter:
         :param index: the index of the bit to set
         :param value: The value to set the bits to.
         """
-        self.filter_bits[index // 4] |= int(value) << (3 - index%4)
+        self.filter_bits[index // 8] |= int(value) << (7 - index%8)
     
     def __repr__(self) -> str:
         return "BloomFilter(m={}, filter_bits={})".format(

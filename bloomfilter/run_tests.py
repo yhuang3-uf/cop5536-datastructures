@@ -40,7 +40,7 @@ class TestBloomFilter15(unittest.TestCase):
         """
         Checks that the declared `m` value is reasonable.
         """
-        self.assertEqual(self.bloom.m // 4 + int(bool(self.bloom.m % 4)), 
+        self.assertEqual(self.bloom.m // 8 + int(bool(self.bloom.m % 8)), 
                 len(self.bloom.filter_bits))
 
 class TestHelperFunctions(unittest.TestCase):
