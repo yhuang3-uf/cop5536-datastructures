@@ -1,3 +1,4 @@
+import doctest
 import random
 import sys
 import unittest
@@ -67,6 +68,14 @@ def main(argv: list[str]) -> int:
     The main function to be invoked when this file is run from the command
     line.
     """
+    DOCTEST_FILES: tuple[str, ...] = (
+        "bloomfilter.py",
+    )
+    for doctest_file in DOCTEST_FILES:
+        print(f"Running doctests for {doctest_file}...")
+        doctest.testfile(doctest_file)
+
+    print("\nRunning unit tests...")
     unittest.main()
     return 0
 
