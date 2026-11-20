@@ -3,6 +3,7 @@ Implementation of data structures explored in COP5536.
 
 # Directories
  * `bloomfilter` - Implementation of a Bloom filter.
+ * `rpst` - Implementation of a Radix Priority Search Tree.
 
 # License
 ```
